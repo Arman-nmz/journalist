@@ -1,0 +1,46 @@
+# 1. Global End-of-Line (EOL) Normalization
+# Handle text files to avoid Windows (CRLF) vs Mac/Linux (LF) conflicts
+* text=auto eol=lf
+
+# 2. Python Source Files
+*.py text diff=python
+
+# 3. Web & Frontend Assets
+*.js text
+*.css text
+*.scss text
+*.json text
+*.jsonld text
+
+# 4. Django Templates (Forces GitHub/Linguist to highlight HTML as Django)
+*.html text linguist-language=django
+
+# 5. Configuration & Documentation
+*.md text
+*.yml text
+*.yaml text
+*.toml text
+*.ini text
+*.cfg text
+.gitignore text
+.gitattributes text
+
+# 6. Binary Files & Multimedia (Prevents Git from attempting line-ending conversion)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.svg text
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.eot binary
+*.ttf binary
+
+# 7. Deployment & Build Archives (Excludes non-production files from git archive)
+.gitignore export-ignore
+.gitattributes export-ignore
+tests/ export-ignore
+.github/ export-ignore
